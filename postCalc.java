@@ -54,7 +54,7 @@ public class postCalc implements Calculadora {
 				vec.push(Character.getNumericValue(input.charAt(i)));
 			}
 			else{
-				System.out.println("Solamente puede ingresar 0-9, + , - , * , /")
+				System.out.println("Error de entrada!")
 				error = true;
 			}
 		
