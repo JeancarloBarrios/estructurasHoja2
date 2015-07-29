@@ -54,7 +54,7 @@ public class postCalc implements Calculadora {
 				vec.push(Character.getNumericValue(input.charAt(i)));
 			}
 			else{
-				System.out.println("Error de entrada!")
+				System.out.println("Error de entrada!");
 				error = true;
 				break;
 			}
@@ -63,16 +63,15 @@ public class postCalc implements Calculadora {
 		if (vec.size()!=1){
 			error=true;
 			System.out.println("ERROR: Revisar entrada.\nCantidad de operadores y numeros no coinciden");
+		}
 		return error;
 	}
+		
 
 	@Override
 	public int getResultado() {
-<<<<<<< HEAD
+
 		return (int) vec.pop();
-=======
-		return vec.pop();
->>>>>>> 5deb7fac53970863e0f087d4c654edf18c87c192
 	}
 
 }
