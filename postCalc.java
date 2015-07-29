@@ -23,27 +23,27 @@ public class postCalc implements Calculadora {
 		int x,y;
 		boolean error = false;
 		for (int i=0; i<input.length(); i++){
-			if (input.charAt(i)=='+'){
-				x = vec.pop();
-				y = vec.pop();
+			if (input.charAt(i)=='+' && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x + y;
 				vec.push(x);
 			}
-			else if (input.charAt(i)==('-')){
-				x = vec.pop();
-				y = vec.pop();
+			else if (input.charAt(i)==('-') && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x - y;
 				vec.push(x);
 		    }
-			else if (input.charAt(i)=='/'){
-				x = vec.pop();
-				y = vec.pop();
+			else if (input.charAt(i)=='/' && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x / y;
 				vec.push(x);
 		    }
-			else if (input.charAt(i)=='*'){
-				x = vec.pop();
-				y = vec.pop();
+			else if (input.charAt(i)=='*' && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x * y;
 				vec.push(x);
 		    }
@@ -56,6 +56,7 @@ public class postCalc implements Calculadora {
 			else{
 				System.out.println("Error de entrada!")
 				error = true;
+				break;
 			}
 		
 		}
@@ -67,7 +68,11 @@ public class postCalc implements Calculadora {
 
 	@Override
 	public int getResultado() {
+<<<<<<< HEAD
+		return (int) vec.pop();
+=======
 		return vec.pop();
+>>>>>>> 5deb7fac53970863e0f087d4c654edf18c87c192
 	}
 
 }
