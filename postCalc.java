@@ -54,17 +54,25 @@ public class postCalc implements Calculadora {
 				vec.push(Character.getNumericValue(input.charAt(i)));
 			}
 			else{
+				System.out.println("Solamente puede ingresar 0-9, + , - , * , /")
 				error = true;
 				break;
 			}
 		
 		}
+		if (vec.size()!=1){
+			error=true;
+			System.out.println("ERROR: Revisar entrada.\nCantidad de operadores y numeros no coinciden");
 		return error;
 	}
 
 	@Override
 	public int getResultado() {
+<<<<<<< HEAD
 		return (int) vec.pop();
+=======
+		return vec.pop();
+>>>>>>> 5deb7fac53970863e0f087d4c654edf18c87c192
 	}
 
 }
