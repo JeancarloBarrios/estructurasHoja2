@@ -5,7 +5,7 @@ public class usrInterface {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Calculadora calc = new postCalc();
-		String linea = "*4+";
+		String linea = "*44+";
 		calc.setString(linea);
 		boolean error = false;
 		try
