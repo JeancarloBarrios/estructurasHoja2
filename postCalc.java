@@ -23,27 +23,27 @@ public class postCalc implements Calculadora {
 		int x,y;
 		boolean error = false;
 		for (int i=0; i<input.length(); i++){
-			if (input.charAt(i)=='+'){
-				x = vec.pop();
-				y = vec.pop();
+			if (input.charAt(i)=='+' && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x + y;
 				vec.push(x);
 			}
-			else if (input.charAt(i)==('-')){
-				x = vec.pop();
-				y = vec.pop();
+			else if (input.charAt(i)==('-') && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x - y;
 				vec.push(x);
 		    }
-			else if (input.charAt(i)=='/'){
-				x = vec.pop();
-				y = vec.pop();
+			else if (input.charAt(i)=='/' && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x / y;
 				vec.push(x);
 		    }
-			else if (input.charAt(i)=='*'){
-				x = vec.pop();
-				y = vec.pop();
+			else if (input.charAt(i)=='*' && vec.size()>=2){
+				x = (int) vec.pop();
+				y = (int) vec.pop();
 				x = x * y;
 				vec.push(x);
 		    }
@@ -51,10 +51,11 @@ public class postCalc implements Calculadora {
 			
 			}
 			else if (Character.isDigit(input.charAt(i))){
-				vec.push(Character.getNumericValue(input.charAt(i));
+				vec.push(Character.getNumericValue(input.charAt(i)));
 			}
 			else{
 				error = true;
+				break;
 			}
 		
 		}
@@ -63,7 +64,7 @@ public class postCalc implements Calculadora {
 
 	@Override
 	public int getResultado() {
-		return Character.getNumericValue((char) vec.pop());
+		return (int) vec.pop();
 	}
 
 }
