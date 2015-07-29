@@ -51,19 +51,23 @@ public class postCalc implements Calculadora {
 			
 			}
 			else if (Character.isDigit(input.charAt(i))){
-				vec.push(Character.getNumericValue(input.charAt(i));
+				vec.push(Character.getNumericValue(input.charAt(i)));
 			}
 			else{
+				System.out.println("Solamente puede ingresar 0-9, + , - , * , /")
 				error = true;
 			}
 		
 		}
+		if (vec.size()!=1){
+			error=true;
+			System.out.println("ERROR: Revisar entrada.\nCantidad de operadores y numeros no coinciden");
 		return error;
 	}
 
 	@Override
 	public int getResultado() {
-		return Character.getNumericValue((char) vec.pop());
+		return vec.pop();
 	}
 
 }
