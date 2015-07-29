@@ -38,6 +38,12 @@ public class postCalc implements Calculadora {
 			else if (input.charAt(i)=='/' && vec.size()>=2){
 				x = (int) vec.pop();
 				y = (int) vec.pop();
+				if (y==0) {
+					error = true;
+					System.out.println("Divission por cero");
+					break;
+				}
+				
 				x = x / y;
 				vec.push(x);
 		    }
@@ -54,7 +60,10 @@ public class postCalc implements Calculadora {
 				vec.push(Character.getNumericValue(input.charAt(i)));
 			}
 			else{
+
 				System.out.println("Solamente puede ingresar 0-9, + , - , * , /");
+
+				System.out.println("Error de entrada!");
 				error = true;
 				break;
 			}
@@ -66,6 +75,7 @@ public class postCalc implements Calculadora {
 		}
 		return error;
 	}
+		
 
 	@Override
 	public int getResultado() {
