@@ -3,9 +3,12 @@ package hoja2;
 
 
 public class postCalc implements Calculadora {
-    protected Stack vec = new StackVector();
-    protected String input;
-    public postCalc(){
+    //StackVector para guardar datos y resultado
+	protected Stack vec = new StackVector();
+    //String con entrada para calcular
+	protected String input;
+    
+	public postCalc(){
 	input = "";
     }
     
@@ -19,10 +22,21 @@ public class postCalc implements Calculadora {
 
 	@Override
 	public boolean calcularVector() {
-		// TODO Auto-generated method stub
+		//x,y para realizar operaciones
 		int x,y;
+		//error defaults to false
 		boolean error = false;
+		//run length of the string, putting digits into vector as int
+		//calculate operations as necessary
+		//skip white spaces
+		//invalid inputs break loop and return error
 		for (int i=0; i<input.length(); i++){
+			//los dos requisitos para cualquier operacion aritmetica son:
+			//que sea + , *  /
+			//que existen al menos 2 objetos en el stack
+			
+			//por los operadores, pop to x, pop to y, realizar operacion
+			//push resultados al stack
 			if (input.charAt(i)=='+' && vec.size()>=2){
 				x = (int) vec.pop();
 				y = (int) vec.pop();
@@ -38,6 +52,8 @@ public class postCalc implements Calculadora {
 			else if (input.charAt(i)=='/' && vec.size()>=2){
 				x = (int) vec.pop();
 				y = (int) vec.pop();
+				//ensegurar que no hay division por 0
+				//si hay, mostrar error y break loop
 				if (y==0) {
 					error = true;
 					System.out.println("Divission por cero");
@@ -53,12 +69,18 @@ public class postCalc implements Calculadora {
 				x = x * y;
 				vec.push(x);
 		    }
+			//por white space, no haga nada
 			else if (input.charAt(i)==' '){
 			
 			}
+			//por numeros, push al stack como integer
 			else if (Character.isDigit(input.charAt(i))){
 				vec.push(Character.getNumericValue(input.charAt(i)));
 			}
+			
+			//llega a "else" si:
+			//operador, pero menos que 2 objetos en el stack
+			//es una letra o operador no valido
 			else{
 
 				System.out.println("Solamente puede ingresar 0-9, + , - , * , /");
@@ -69,6 +91,8 @@ public class postCalc implements Calculadora {
 			}
 		
 		}
+		//si al terminar, no hay 1 exacto objeto en el Stack, habia una error
+		//muestra error
 		if (vec.size()!=1){
 			error=true;
 			System.out.println("ERROR: Revisar entrada.\nCantidad de operadores y numeros no coinciden");
@@ -78,6 +102,7 @@ public class postCalc implements Calculadora {
 		
 
 	@Override
+	//just returns what's in the stack as result
 	public int getResultado() {
 		return (int) vec.pop();
 	}
