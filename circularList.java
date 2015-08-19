@@ -17,10 +17,17 @@ public E getFirst(){
   return head.value();
 }
 public E removeFirst(){
+  // it removes the first value of the list
   head = tail.next();
   tail.setNext(head.next());
+  count--;
   return head.value();
 }
+
+public int size(){
+  return count;
+}
+
 
 public void addFirst(E value)
 // pre: value non-null
