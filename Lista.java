@@ -8,4 +8,12 @@ public interface Lista<E>
     
    public void addFirst(E value);
    // post: value is added to beginning of list
+   
+   public void removeFirst();
+   //pre: !empty
+   //post: remove value from beginning of list
+   
+   public void getFirst();
+   //post: return value of first item
+   //		else, return NULL
 }

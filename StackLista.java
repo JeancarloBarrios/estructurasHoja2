@@ -1,12 +1,12 @@
 public class StackLista<E>
     implements Stack<E>
 {
-	protected SinglyLinkedList<E> data;
+	protected Lista<E> data;
 
 	public StackLista()
 	// post: constructs a new, empty stack
 	{
-		data = new SinglyLinkedList<E>();
+		data = new Lista<E>();
 	}
 
 	public void push(E item)
