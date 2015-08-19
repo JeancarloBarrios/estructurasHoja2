@@ -1,4 +1,4 @@
-public DoublyLinkedList<E> extends abstractLista<E>
+public class DoublyLinkedList<E> extends abstractLista<E>{
 protected int count;
 protected DoublyLinkedNode<E> head;
 protected DoublyLinkedNode<E> tail;
@@ -9,6 +9,10 @@ public DoublyLinkedList()
    head = null;
    tail = null;
    count = 0;
+}
+
+public int size(){
+	return count;
 }
 
 
@@ -24,7 +28,7 @@ public void addFirst(E value)
 }
 
 public E getFirst(){
-	return head;
+	return head.value();
 }
 
 
@@ -36,7 +40,7 @@ public E removeFirst(){
 	head = head.next();
 	head.setPrevious(null);
 	count--;
-	return temp;
+	return temp.value();
 }
 
 
@@ -65,4 +69,5 @@ public E removeLast()
    }
    count--;
    return temp.value();
+}
 }

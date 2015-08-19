@@ -1,5 +1,3 @@
-package lista;
-
 public abstract class abstractLista<E> 
     implements Lista<E> {
     
