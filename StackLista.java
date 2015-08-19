@@ -5,12 +5,13 @@ public class StackLista<E>
     implements Stack<E>
 {
 	protected Lista<E> data;
-
+	Scanner in= new Scanner(System.in);
+	ListFactory listF= new ListFactory();
+	
 	public StackLista()
 	// post: constructs a new, empty stack
 	{
-		Scanner in= new Scanner(System.in);
-		ListFactory listF= new ListFactory();
+
 		
 		System.out.println("Which type of Stack?\n1.ArrayList\n2.Vector\n3.List\nPick 1, 2 or 3");
 		String str= in.nextLine();				
