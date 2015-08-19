@@ -1,4 +1,5 @@
-public CircularList<E> extends abstractLista<E>
+public class CircularList<E> extends abstractLista<E>
+{
 
 protected Node<E> tail; 
 protected int count;
@@ -57,4 +58,5 @@ public E removeLast()
    }
    count--;
    return temp.value();
+}
 }
