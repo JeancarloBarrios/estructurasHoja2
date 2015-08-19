@@ -11,6 +11,17 @@ public CircularList()
    count = 0;
 }
 
+public E getFirst(){
+  // returns the first element
+  head = tail.next();
+  return head.value();
+}
+public E removeFirst(){
+  head = tail.next();
+  tail.setNext(head.next());
+  return head.value();
+}
+
 public void addFirst(E value)
 // pre: value non-null
 // post: adds element to head of list
@@ -59,4 +70,5 @@ public E removeLast()
    count--;
    return temp.value();
 }
+
 }
