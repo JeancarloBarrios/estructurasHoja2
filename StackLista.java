@@ -1,3 +1,6 @@
+import java.util.Scanner;
+
+
 public class StackLista<E>
     implements Stack<E>
 {
@@ -6,7 +9,12 @@ public class StackLista<E>
 	public StackLista()
 	// post: constructs a new, empty stack
 	{
-		data = new Lista<E>();
+		Scanner in= new Scanner(System.in);
+		ListFactory listF= new ListFactory();
+		
+		System.out.println("Which type of Stack?\n1.ArrayList\n2.Vector\n3.List\nPick 1, 2 or 3");
+		String str= in.nextLine();				
+		data = listF.getList(str);
 	}
 
 	public void push(E item)

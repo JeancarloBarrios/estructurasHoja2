@@ -1,10 +1,21 @@
+import java.util.Scanner;
+
+
 public class postCalc implements Calculadora {
-    //StackVector para guardar datos y resultado
-	protected Stack vec = new StackVector();
-    //String con entrada para calcular
+	Scanner scn = new Scanner(System.in);
+	StackFactory stackF = new StackFactory();
+
+	//Stack para guardar datos y resultado
+	protected Stack vec;
 	protected String input;
     
 	public postCalc(){
+	System.out.println("\n1. Stack Vector\n2. Stack ArrayList\n3. Stack List\n Please enter 1,2 or 3: ");
+	String choice=scn.nextLine();
+    
+	
+	vec = stackF.getStack(choice);
+    //String con entrada para calcular
 	input = "";
     }
     
