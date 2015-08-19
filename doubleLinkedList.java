@@ -23,6 +23,22 @@ public void addFirst(E value)
    count++;
 }
 
+public E getFirst(){
+	return head;
+}
+
+
+public E removeFirst(){
+	//pre: list not empty
+	//post: remove value from head of list
+	
+	DoublyLinkedNode<E> temp = head;
+	head = head.next();
+	head.setPrevious(null);
+	count--;
+	return temp;
+}
+
 
 public void addLast(E value)
 // pre: value is not null
