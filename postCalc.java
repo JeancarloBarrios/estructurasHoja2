@@ -1,7 +1,3 @@
-
-package hoja2;
-
-
 public class postCalc implements Calculadora {
     //StackVector para guardar datos y resultado
 	protected Stack vec = new StackVector();

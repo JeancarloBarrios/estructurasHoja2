@@ -1,5 +1,3 @@
-package hoja2;
-
 public interface Stack<E> 
 {
 

@@ -1,6 +1,5 @@
-package hoja2;
 //Jeancarlo Barrios 14652
-//Dereck Olson 13207
+//Derek Olsson 13207
 //Cristian Del Carmen 12961
 //Cristian Chilel 12417
 //Usser Interface

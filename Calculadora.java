@@ -1,7 +1,3 @@
-package hoja2;
-
-//
-
 public interface Calculadora {
 
 

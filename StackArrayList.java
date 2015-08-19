@@ -1,5 +1,3 @@
-package hoja2;
-
 import java.util.ArrayList;
 
 public class StackArrayList<E> implements Stack<E>

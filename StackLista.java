@@ -1,35 +1,33 @@
-import java.util.Vector;
-
-public class StackVector<E>
- implements Stack<E>
+public class StackLista<E>
+    implements Stack<E>
 {
-	protected Vector<E> data;
+	protected SinglyLinkedList<E> data;
 
-	public StackVector()
+	public StackLista()
 	// post: constructs a new, empty stack
 	{
-		data = new Vector<E>();
+		data = new SinglyLinkedList<E>();
 	}
 
 	public void push(E item)
 	// post: the value is added to the stack
 	//          will be popped next if no intervening push
 	{
-		data.add(item);
+		data.addFirst(item);
 	}
 
 	public E pop()
 	// pre: stack is not empty
 	// post: most recently pushed item is removed and returned
 	{
-		return data.remove(size()-1);
+		return data.removeFirst();
 	}
 
 	public E peek()
 	// pre: stack is not empty
 	// post: top value (next to be popped) is returned
 	{
-		return data.get(size() - 1);
+		return data.getFirst();
 	}
 	
 	public int size()
@@ -43,4 +41,5 @@ public class StackVector<E>
 	{
 		return size() == 0;
 	}
+    
 }
