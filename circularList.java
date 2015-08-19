@@ -13,12 +13,12 @@ public CircularList()
 
 public E getFirst(){
   // returns the first element
-  head = tail.next();
+  Node<E> head = tail.next();
   return head.value();
 }
 public E removeFirst(){
   // it removes the first value of the list
-  head = tail.next();
+  Node<E> head = tail.next();
   tail.setNext(head.next());
   count--;
   return head.value();
