@@ -11,8 +11,8 @@ public class StackFactory {
 						
 			case "2":	return new StackArrayList();
 						
-			case "3":	return new StackLista();
-						
+			case "3":	return new StackArrayList();
+						 
 		}
 	return null;
 	}
